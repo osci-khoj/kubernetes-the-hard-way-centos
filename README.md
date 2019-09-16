@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![Certified Kubernetes Administrators Course](https://res.cloudinary.com/cloudusthad/image/upload/v1556858993/course-image.png)
 
 This repository holds the supporting material for the [Certified Kubernetes Administrators Course](https://kodekloud.com/p/certified-kubernetes-administrator-with-practice-tests). There are two major sections. 
@@ -55,3 +56,7 @@ Kubernetes The Hard Way guides you through bootstrapping a highly available Kube
 * [Smoke Test](docs/15-smoke-test.md)
 * [E2E Test](docs/16-e2e-tests.md)
 * [Extra - Dynamic Kubelet Configuration](docs/17-extra-dynamic-kubelet-configuration.md)
+=======
+# kubernetes-the-hard-way-centos
+kubernetes-the-hard-way-centos
+>>>>>>> 2be632b41480246716240b8d7225176e7304cf0e
