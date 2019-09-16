@@ -6,7 +6,7 @@
 NUM_MASTER_NODE = 2
 NUM_WORKER_NODE = 2
 
-IP_NW = "192.168.5."
+IP_NW = "192.168.25."
 MASTER_IP_START = 10
 NODE_IP_START = 20
 LB_IP_START = 30
@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   # config.vm.box = "base"
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "centos/7"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -66,11 +66,11 @@ Vagrant.configure("2") do |config|
         node.vm.network :private_network, ip: IP_NW + "#{MASTER_IP_START + i}"
         node.vm.network "forwarded_port", guest: 22, host: "#{2710 + i}"
 
-        node.vm.provision "setup-hosts", :type => "shell", :path => "ubuntu/vagrant/setup-hosts.sh" do |s|
-          s.args = ["enp0s8"]
+        node.vm.provision "setup-hosts", :type => "shell", :path => "centos/vagrant/setup-hosts.sh" do |s|
+          s.args = ["eth1"]
         end
 
-        node.vm.provision "setup-dns", type: "shell", :path => "ubuntu/update-dns.sh"
+        node.vm.provision "setup-dns", type: "shell", :path => "centos/update-dns.sh"
 
       end
   end
@@ -86,11 +86,11 @@ Vagrant.configure("2") do |config|
     node.vm.network :private_network, ip: IP_NW + "#{LB_IP_START}"
 	node.vm.network "forwarded_port", guest: 22, host: 2730
 
-    node.vm.provision "setup-hosts", :type => "shell", :path => "ubuntu/vagrant/setup-hosts.sh" do |s|
-      s.args = ["enp0s8"]
+    node.vm.provision "setup-hosts", :type => "shell", :path => "centos/vagrant/setup-hosts.sh" do |s|
+      s.args = ["eth1"]
     end
 
-    node.vm.provision "setup-dns", type: "shell", :path => "ubuntu/update-dns.sh"
+    node.vm.provision "setup-dns", type: "shell", :path => "centos/update-dns.sh"
 
   end
 
@@ -106,13 +106,13 @@ Vagrant.configure("2") do |config|
         node.vm.network :private_network, ip: IP_NW + "#{NODE_IP_START + i}"
 		node.vm.network "forwarded_port", guest: 22, host: "#{2720 + i}"
 
-        node.vm.provision "setup-hosts", :type => "shell", :path => "ubuntu/vagrant/setup-hosts.sh" do |s|
-          s.args = ["enp0s8"]
+        node.vm.provision "setup-hosts", :type => "shell", :path => "centos/vagrant/setup-hosts.sh" do |s|
+          s.args = ["eth1"]
         end
 
-        node.vm.provision "setup-dns", type: "shell", :path => "ubuntu/update-dns.sh"
-        node.vm.provision "install-docker", type: "shell", :path => "ubuntu/install-docker.sh"
-        node.vm.provision "allow-bridge-nf-traffic", :type => "shell", :path => "ubuntu/allow-bridge-nf-traffic.sh"
+        node.vm.provision "setup-dns", type: "shell", :path => "centos/update-dns.sh"
+        node.vm.provision "install-docker", type: "shell", :path => "centos/install-docker.sh"
+        node.vm.provision "allow-bridge-nf-traffic", :type => "shell", :path => "centos/allow-bridge-nf-traffic.sh"
 
     end
   end
