@@ -24,11 +24,11 @@ This does the below:
 
     | VM           |  VM Name               | Purpose       | IP           | Forwarded Port   |
     | ------------ | ---------------------- |:-------------:| ------------:| ----------------:|
-    | master-1     | kubernetes-ha-master-1 | Master        | 192.168.5.11 |     2711         |
-    | master-2     | kubernetes-ha-master-2 | Master        | 192.168.5.12 |     2712         |
-    | worker-1     | kubernetes-ha-worker-1 | Worker        | 192.168.5.21 |     2730         |
-    | worker-2     | kubernetes-ha-worker-2 | Worker        | 192.168.5.22 |     2721         |
-    | lb           | kubernetes-ha-lb       | LoadBalancer  | 192.168.5.30 |     2722         |
+    | master-1     | kubernetes-ha-master-1 | Master        | 192.168.25.11 |     2711         |
+    | master-2     | kubernetes-ha-master-2 | Master        | 192.168.25.12 |     2712         |
+    | worker-1     | kubernetes-ha-worker-1 | Worker        | 192.168.25.21 |     2730         |
+    | worker-2     | kubernetes-ha-worker-2 | Worker        | 192.168.25.22 |     2721         |
+    | lb           | kubernetes-ha-lb       | LoadBalancer  | 192.168.25.30 |     2722         |
 
     > These are the default settings. These can be changed in the Vagrant file
 
