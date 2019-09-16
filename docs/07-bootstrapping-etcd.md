@@ -75,7 +75,7 @@ ExecStart=/usr/local/bin/etcd \\
   --listen-client-urls https://${INTERNAL_IP}:2379,https://127.0.0.1:2379 \\
   --advertise-client-urls https://${INTERNAL_IP}:2379 \\
   --initial-cluster-token etcd-cluster-0 \\
-  --initial-cluster master-1=https://192.168.5.11:2380,master-2=https://192.168.5.12:2380 \\
+  --initial-cluster master-1=https://192.168.25.11:2380,master-2=https://192.168.25.12:2380 \\
   --initial-cluster-state new \\
   --data-dir=/var/lib/etcd
 Restart=on-failure
@@ -113,8 +113,8 @@ sudo ETCDCTL_API=3 etcdctl member list \
 > output
 
 ```
-45bf9ccad8d8900a, started, master-2, https://192.168.5.12:2380, https://192.168.5.12:2379
-54a5796a6803f252, started, master-1, https://192.168.5.11:2380, https://192.168.5.11:2379
+45bf9ccad8d8900a, started, master-2, https://192.168.5.12:2380, https://192.168.25.12:2379
+54a5796a6803f252, started, master-1, https://192.168.5.11:2380, https://192.168.25.11:2379
 ```
 
 Next: [Bootstrapping the Kubernetes Control Plane](08-bootstrapping-kubernetes-controllers.md)
