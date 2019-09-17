@@ -2,13 +2,6 @@
 kubernetes는 어렵지 않아요. 더군다나 인스톨이 쉬워요.
 
 
-
-
-
-  
-
-
-
 배를 몰아보아요.
 여기서 우리는 몇가지만 기억하면 됩니다. 
 
@@ -44,6 +37,7 @@ gVisor 50c283b9f56bb7200938d9e207355f05f79f0d17
 CNI Container Networking 0.6.0
 etcd v3.3.9
 CoreDNS v1.2.2
+
 수정본 : https://github.com/mmumshad/kubernetes-the-hard-way
 
 환경 : ubuntu based on VirtualBox 
@@ -54,6 +48,7 @@ CNI Container Networking 0.7.5
 Weave Networking
 etcd v3.3.9
 CoreDNS v1.2.2
+
 우리 환경 : 
 
 환경 : centos based on VirtualBox
@@ -92,6 +87,3 @@ CoreDNS v1.2.2
 * [Smoke Test](docs/15-smoke-test.md)
 * [E2E Test](docs/16-e2e-tests.md)
 * [Extra - Dynamic Kubelet Configuration](docs/17-extra-dynamic-kubelet-configuration.md)
-=======
-# kubernetes-the-hard-way-centos
-kubernetes-the-hard-way-centos
