@@ -1,34 +1,70 @@
 
+kubernetes는 어렵지 않아요. 더군다나 인스톨이 쉬워요.
 
 
-This repository holds the supporting material for the [Certified Kubernetes Administrators Course](https://kodekloud.com/p/certified-kubernetes-administrator-with-practice-tests). There are two major sections. 
-
-- [Kubernetes The Hard Way on VirtualBox](#kubernetes-the-hard-way-on-virtualbox)
-- [Answers to Practice Tests hosted on KodeKloud](/practice-questions-answers)
 
 
-# Kubernetes The Hard Way On VirtualBox
 
-This tutorial walks you through setting up Kubernetes the hard way on a local machine using VirtualBox.
-This guide is not for people looking for a fully automated command to bring up a Kubernetes cluster.
-If that's you then check out [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine), or the [Getting Started Guides](http://kubernetes.io/docs/getting-started-guides/).
+  
 
-Kubernetes The Hard Way is optimized for learning, which means taking the long route to ensure you understand each task required to bootstrap a Kubernetes cluster.
 
-This tutorial is a modified version of the original developed by [Kelsey Hightower](https://github.com/kelseyhightower/kubernetes-the-hard-way).
-While the original one uses GCP as the platform to deploy kubernetes,  we use VirtualBox and Vagrant to deploy a cluster on a local machine. If you prefer the cloud version, refer to the original one [here](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
-Another difference is that we use Docker instead of containerd. There are a few other differences to the original and they are documented [here](docs/differences-to-original.md)
+배를 몰아보아요.
+여기서 우리는 몇가지만 기억하면 됩니다. 
 
-> The results of this tutorial should not be viewed as production ready, and may receive limited support from the community, but don't let that stop you from learning!
+우리는 현재 항구에서 배로 무역을 하는 인프라를 관리합니다. 
 
-## Target Audience
+worker node는 무역선이고, master node는 항구입니다. 
 
-The target audience for this tutorial is someone planning to support a production Kubernetes cluster and wants to understand how everything fits together.
+worker node에 있는 kubelet은 선장역할을 하고, 항구와는 kube-apiserver이라는 관제탑과 연락을 주고받습니다. 
 
-## Cluster Details
+항구에는 배의 상태를 지속적으로 체크하며, 과거 배의 상태나 수리내역을 Kube-controller-manager를 통해서 관리합니다. 
 
-Kubernetes The Hard Way guides you through bootstrapping a highly available Kubernetes cluster with end-to-end encryption between components and RBAC authentication.
+또한 항구는 배의 상태를 확인한후, 폭풍우에 맞아 가라앉은 배를 다른배로 교체하고, 물건을 옮기고 하는 일들을 관장하는 kube-scheduler가 있습니다. 
+
+그럼 이러한 모든 배의 정보와 무역에 관한 정보를 가지고 있는곳이 있어야겠지요? 그것은 ETCD라는 곳입니다. 
+
+앞으로 할일 
+
+먼저 무역을 하는 인프라를 구성해 볼거에요. 
+
+이 문서는 매우 유명한 문서로 실제 kubernetes.io에 GCP 기반으로 구현되어 있는 Kelsey Hightower 가 작성한 문서를  기반으로 하였습니다. 
+
+이 문서는 Mumshad Mammambeth라는 사람이 virtualbox 기반으로 구현하였습니다. 
+
+저는 이 문서를 최신으로 버전업 하면서, 내부 VM을 모두 centos로 변경하는 작업을 하였습니다. 이유는 이전에 저희팀에서 오픈스택 패키징을 할때도 centos기반으로 해서 유용하였던 적이 여러번 있었기 때문입니다. 
+
+원본 : https://github.com/kelseyhightower/kubernetes-the-hard-way  
+
+       환경 : ubuntu based on GCP
+
+Kubernetes 1.12.0
+containerd Container Runtime 1.2.0-rc.0
+gVisor 50c283b9f56bb7200938d9e207355f05f79f0d17
+CNI Container Networking 0.6.0
+etcd v3.3.9
+CoreDNS v1.2.2
+수정본 : https://github.com/mmumshad/kubernetes-the-hard-way
+
+환경 : ubuntu based on VirtualBox 
+
+Kubernetes 1.13.0
+Docker Container Runtime 18.06
+CNI Container Networking 0.7.5
+Weave Networking
+etcd v3.3.9
+CoreDNS v1.2.2
+우리 환경 : 
+
+환경 : centos based on VirtualBox
+
+kubectl 1.15.3
+Kubernetes 1.15.3
+Docker Container Runtime 19.03.2
+CNI Container Networking 0.8.2
+Weave Networking
+etcd v3.4
+CoreDNS v1.2.2
 
 * [Kubernetes](https://github.com/kubernetes/kubernetes) 1.13.0
 * [Docker Container Runtime](https://github.com/containerd/containerd) 18.06
@@ -59,4 +95,3 @@ Kubernetes The Hard Way guides you through bootstrapping a highly available Kube
 =======
 # kubernetes-the-hard-way-centos
 kubernetes-the-hard-way-centos
->>>>>>> 2be632b41480246716240b8d7225176e7304cf0e
