@@ -71,6 +71,7 @@ Vagrant.configure("2") do |config|
         end
 
         node.vm.provision "setup-dns", type: "shell", :path => "centos/update-dns.sh"
+	node.vm.provision "selinux", :type => "shell", :path => "centos/selinux.sh"
 
       end
   end
@@ -91,6 +92,7 @@ Vagrant.configure("2") do |config|
     end
 
     node.vm.provision "setup-dns", type: "shell", :path => "centos/update-dns.sh"
+    node.vm.provision "selinux", :type => "shell", :path => "centos/selinux.sh"
 
   end
 
