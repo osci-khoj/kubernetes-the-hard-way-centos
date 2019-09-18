@@ -46,4 +46,4 @@ CoreDNS v1.2.2
 * [etcd](https://github.com/coreos/etcd) v3.3.9
 * [CoreDNS](https://github.com/coredns/coredns) v1.2.2
 
-syntax: [Document](27.255.70.23)
+syntax: [Document](http://27.255.70.23)
