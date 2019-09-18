@@ -18,7 +18,8 @@ CoreDNS v1.2.2
 
 수정본 : https://github.com/mmumshad/kubernetes-the-hard-way
 
-환경 : ubuntu based on VirtualBox 
+       환경 : ubuntu based on VirtualBox 
+
 
 Kubernetes 1.13.0
 Docker Container Runtime 18.06
@@ -29,7 +30,8 @@ CoreDNS v1.2.2
 
 우리 환경 : 
 
-환경 : centos based on VirtualBox
+       환경 : centos based on VirtualBox
+       
 
 kubectl 1.15.3
 Kubernetes 1.15.3
