@@ -1,9 +1,9 @@
 
 이 문서는 매우 유명한 문서로 실제 kubernetes.io에 GkCP 기반으로 구현되어 있는 Kelsey Hightower 가 작성한 문서를  기반으로 하였습니다. 
 
-이 문서는 Mumshad Mammambeth라는 사람이 virtualbox 기반으로 구현하였습니다. 
+이 문서를 Mumshad Mammambeth가 virtualbox 기반으로 구현하였습니다. 
 
-저는 이 문서를 최신으로 버전업 하면서, 내부 VM을 모두 centos로 변경하는 작업을 하였습니다. 이유는 이전에 저희팀에서 오픈스택 패키징을 할때도 centos기반으로 해서 유용하였던 적이 여러번 있었기 때문입니다. 
+저는 Mammambeth 문서를 최신으로 버전업 하면서, 내부 VM을 모두 centos로 변경하는 작업을 하였습니다. 이유는 이전에 저희팀에서 오픈스택 패키징을 할때도 centos기반으로 해서 유용하였던 적이 여러번 있었기 때문입니다. 
 
 원본 : https://github.com/kelseyhightower/kubernetes-the-hard-way  
 
