@@ -50,6 +50,7 @@ CoreDNS v1.2.2
 
 syntax: [Document](http://27.255.70.23)
 
+<pre><code>
 ==01.base env=======
 git clone https://github.com/osci-khoj/kubernetes-the-hard-way-centos.git
 --------------------
@@ -906,3 +907,5 @@ kubectl get pods -l k8s-app=kube-dns -n kube-system
 kubectl run --generator=run-pod/v1  busybox1 --image=busybox:1.28 --command -- sleep 3600
 kubectl get pods -l run=busybox1
 kubectl exec -ti busybox1 -- nslookup kubernetes
+
+</code></pre>
