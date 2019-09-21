@@ -8,7 +8,11 @@ vagrant up`
 
 02.vagrant 내 접근허용(반드시 kubernetes-the-hard-way-centos/vagrant 그 위치에서 수행)
  `   vagrant status`
+ 
 master-1
+
 ` vagrant ssh master-1`
+
 `ssh-keygen` password: vagrant
+
 `    ssh-copy-id master-2`
