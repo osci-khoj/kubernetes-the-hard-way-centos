@@ -1,28 +1,21 @@
-005. 구성파일 배포
-=============
+- service account 인증서
 
--master-1
 ~~~
-LOADBALANCER_ADDRESS=192.168.25.30
+openssl genrsa -out service-account.key 2048
+openssl req -new -key service-account.key -subj "/CN=service-accounts" -out service-account.csr
+openssl x509 -req -in service-account.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out service-account.crt -days 1000
 ~~~
-- kube-proxy kubeconfig 파일 -
+
+- 인증서 배포
+
 ~~~
-  kubectl config set-cluster kubernetes-the-hard-way \
-    certificate-authority=ca.crt \
-    embed-certs=true \
-    server=https://${LOADBALANCER_ADDRESS}:6443 \
-    kubeconfig=kube-proxy.kubeconfig
- 
-  kubectl config set-credentials system:kube-proxy \
-    client-certificate=kube-proxy.crt \
-    client-key=kube-proxy.key \
-    embed-certs=true \
-    kubeconfig=kube-proxy.kubeconfig
- 
-  kubectl config set-context default \
-    cluster=kubernetes-the-hard-way \
-    user=system:kube-proxy \
-    kubeconfig=kube-proxy.kubeconfig
- 
-  kubectl config use-context default kubeconfig=kube-proxy.kubeconfig
+for instance in master-2; do
+scp ca.crt ca.key kube-apiserver.key kube-apiserver.crt \
+service-account.key service-account.crt \
+etcd-server.key etcd-server.crt \
+${instance}:~/
+ done
 ~~~
+
+05.구성파일 배포
+========
