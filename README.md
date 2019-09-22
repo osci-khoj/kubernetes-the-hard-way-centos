@@ -33,6 +33,7 @@ CoreDNS v1.2.2
 
        환경 : centos based on VirtualBox
        
+* 설치방법 : [how to install ](https://github.com/osci-khoj/kubernetes-the-hard-way-centos/blob/master/howtoinstall.md)
 
 kubectl 1.15.3
 Kubernetes 1.15.3
@@ -49,7 +50,7 @@ CoreDNS v1.2.2
 * [etcd](https://github.com/coreos/etcd) v3.3.9
 * [CoreDNS](https://github.com/coredns/coredns) v1.2.2
 
-* syntax: [how to install ](https://github.com/osci-khoj/kubernetes-the-hard-way-centos/blob/master/howtoinstall.md)
+
 
 
 
