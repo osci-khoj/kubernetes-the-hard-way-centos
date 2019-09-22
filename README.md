@@ -1,4 +1,27 @@
 
+구축 환경 : 
+
+       환경 : centos based on VirtualBox
+       
+* 설치방법 : [how to install ](https://github.com/osci-khoj/kubernetes-the-hard-way-centos/blob/master/howtoinstall.md)
+* 상세설명 : [explain about how to install](http://27.255.70.23)
+
+kubectl 1.15.3
+Kubernetes 1.15.3
+Docker Container Runtime 19.03.2
+CNI Container Networking 0.8.2
+Weave Networking
+etcd v3.4
+CoreDNS v1.2.2
+
+* [Kubernetes](https://github.com/kubernetes/kubernetes) 1.15.3
+* [Docker Container Runtime](https://github.com/containerd/containerd) 18.06
+* [CNI Container Networking](https://github.com/containernetworking/cni) 0.7.5
+* [Weave Networking](https://www.weave.works/docs/net/latest/kubernetes/kube-addon/)
+* [etcd](https://github.com/coreos/etcd) v3.3.9
+* [CoreDNS](https://github.com/coredns/coredns) v1.2.2
+
+
 이 문서는  kubernetes.io에 GCP 기반으로 구현되어 있는 Kelsey Hightower 가 작성한 문서를  기반으로 하였습니다. 
 
 
@@ -28,29 +51,3 @@ CNI Container Networking 0.7.5
 Weave Networking
 etcd v3.3.9
 CoreDNS v1.2.2
-
-우리 환경 : 
-
-       환경 : centos based on VirtualBox
-       
-* 설치방법 : [how to install ](https://github.com/osci-khoj/kubernetes-the-hard-way-centos/blob/master/howtoinstall.md)
-
-kubectl 1.15.3
-Kubernetes 1.15.3
-Docker Container Runtime 19.03.2
-CNI Container Networking 0.8.2
-Weave Networking
-etcd v3.4
-CoreDNS v1.2.2
-
-* [Kubernetes](https://github.com/kubernetes/kubernetes) 1.15.3
-* [Docker Container Runtime](https://github.com/containerd/containerd) 18.06
-* [CNI Container Networking](https://github.com/containernetworking/cni) 0.7.5
-* [Weave Networking](https://www.weave.works/docs/net/latest/kubernetes/kube-addon/)
-* [etcd](https://github.com/coreos/etcd) v3.3.9
-* [CoreDNS](https://github.com/coredns/coredns) v1.2.2
-
-
-
-
-
