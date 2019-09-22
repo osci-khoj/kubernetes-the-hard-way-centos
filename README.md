@@ -1,9 +1,6 @@
 
-이 문서는 매우 유명한 문서로 실제 kubernetes.io에 GkCP 기반으로 구현되어 있는 Kelsey Hightower 가 작성한 문서를  기반으로 하였습니다. 
+이 문서는  kubernetes.io에 GCP 기반으로 구현되어 있는 Kelsey Hightower 가 작성한 문서를  기반으로 하였습니다. 
 
-이 문서를 Mumshad Mammambeth가 virtualbox 기반으로 구현하였습니다. 
-
-저는 Mammambeth 문서를 최신으로 버전업 하면서, 내부 VM을 모두 centos로 변경하는 작업을 하였습니다. 이유는 이전에 저희팀에서 오픈스택 패키징을 할때도 centos기반으로 해서 유용하였던 적이 여러번 있었기 때문입니다. 
 
 원본 : https://github.com/kelseyhightower/kubernetes-the-hard-way  
 
@@ -15,6 +12,10 @@ gVisor 50c283b9f56bb7200938d9e207355f05f79f0d17
 CNI Container Networking 0.6.0
 etcd v3.3.9
 CoreDNS v1.2.2
+
+이것을 가지고 Mumshad Mammambeth가 virtualbox 기반으로 구현하였습니다. 
+
+저는 Mammambeth 문서를 최신으로 버전업 하면서, 내부 VM을 모두 centos로 변경하는 작업을 하였습니다. 이유는 이전에 저희팀에서 오픈스택 패키징을 할때도 centos기반으로 해서 유용하였던 적이 여러번 있었기 때문입니다. 
 
 수정본 : https://github.com/mmumshad/kubernetes-the-hard-way
 
@@ -48,5 +49,7 @@ CoreDNS v1.2.2
 * [etcd](https://github.com/coreos/etcd) v3.3.9
 * [CoreDNS](https://github.com/coredns/coredns) v1.2.2
 
-syntax: [Document](http://27.255.70.23)
+* syntax: [how to install ](https://github.com/osci-khoj/kubernetes-the-hard-way-centos/blob/master/howtoinstall.md)
+
+
 
