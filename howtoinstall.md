@@ -227,46 +227,47 @@ LOADBALANCER_ADDRESS=192.168.25.30
 
 ~~~
   kubectl config set-cluster kubernetes-the-hard-way \
-    certificate-authority=ca.crt \
-    embed-certs=true \
-    server=https://127.0.0.1:6443 \
-    kubeconfig=kube-scheduler.kubeconfig
+    --certificate-authority=ca.crt \
+    --embed-certs=true \
+    --server=https://127.0.0.1:6443 \
+    --kubeconfig=kube-scheduler.kubeconfig
 
   kubectl config set-credentials system:kube-scheduler \
-    client-certificate=kube-scheduler.crt \
-    client-key=kube-scheduler.key \
-    embed-certs=true \
-    kubeconfig=kube-scheduler.kubeconfig
+    --client-certificate=kube-scheduler.crt \
+    --client-key=kube-scheduler.key \
+    --embed-certs=true \
+    --kubeconfig=kube-scheduler.kubeconfig
 
   kubectl config set-context default \
-    cluster=kubernetes-the-hard-way \
-    user=system:kube-scheduler \
-    kubeconfig=kube-scheduler.kubeconfig
+    --cluster=kubernetes-the-hard-way \
+    --user=system:kube-scheduler \
+    --kubeconfig=kube-scheduler.kubeconfig
 
-  kubectl config use-context default kubeconfig=kube-scheduler.kubeconfig
+  kubectl config use-context default --kubeconfig=kube-scheduler.kubeconfig
+
 ~~~
 
 - masgter-1 / admin kubeconfig 파일
 
 ~~~
   kubectl config set-cluster kubernetes-the-hard-way \
-    certificate-authority=ca.crt \
-    embed-certs=true \
-    server=https://127.0.0.1:6443 \
-    kubeconfig=admin.kubeconfig
+    --certificate-authority=ca.crt \
+    --embed-certs=true \
+    --server=https://127.0.0.1:6443 \
+    --kubeconfig=admin.kubeconfig
 
   kubectl config set-credentials admin \
-    client-certificate=admin.crt \
-    client-key=admin.key \
-    embed-certs=true \
-    kubeconfig=admin.kubeconfig
+    --client-certificate=admin.crt \
+    --client-key=admin.key \
+    --embed-certs=true \
+    --kubeconfig=admin.kubeconfig
 
   kubectl config set-context default \
-    cluster=kubernetes-the-hard-way \
-    user=admin \
-    kubeconfig=admin.kubeconfig
+    --cluster=kubernetes-the-hard-way \
+    --user=admin \
+    --kubeconfig=admin.kubeconfig
 
-  kubectl config use-context default kubeconfig=admin.kubeconfig
+  kubectl config use-context default --kubeconfig=admin.kubeconfig
 ~~~
 
 - master-1 / master에 배포
@@ -280,7 +281,7 @@ done
 - master-1 / worker에 배포
 
 ~~~
-for instance in worker-1 worker-2; do
+for instance in worker-1 worker-2 worker-3; do
   scp kube-proxy.kubeconfig ${instance}:~/
 done
 ~~~
