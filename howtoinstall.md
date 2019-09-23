@@ -42,7 +42,7 @@ ssh-copy-id worker-2
 
 ssh-copy-id lb
 
-wget https://storage.googleapis.com/kubernetes-release/release/v1.15.4/bin/linux/amd64/kubectl`
+wget https://storage.googleapis.com/kubernetes-release/release/v1.15.4/bin/linux/amd64/kubectl
 
 chmod +x kubectl
 
