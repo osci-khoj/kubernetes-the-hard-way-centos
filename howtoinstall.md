@@ -178,23 +178,23 @@ LOADBALANCER_ADDRESS=192.168.25.30
 - master-1 / kube-proxy kubeconfig 파일 -
 ~~~
   kubectl config set-cluster kubernetes-the-hard-way \
-    certificate-authority=ca.crt \
-    embed-certs=true \
-    server=https://${LOADBALANCER_ADDRESS}:6443 \
-    kubeconfig=kube-proxy.kubeconfig
+    --certificate-authority=ca.crt \
+    --embed-certs=true \
+    --server=https://${LOADBALANCER_ADDRESS}:6443 \
+    --kubeconfig=kube-proxy.kubeconfig
 
   kubectl config set-credentials system:kube-proxy \
-    client-certificate=kube-proxy.crt \
-    client-key=kube-proxy.key \
-    embed-certs=true \
-    kubeconfig=kube-proxy.kubeconfig
+    --client-certificate=kube-proxy.crt \
+    --client-key=kube-proxy.key \
+    --embed-certs=true \
+    --kubeconfig=kube-proxy.kubeconfig
 
   kubectl config set-context default \
-    cluster=kubernetes-the-hard-way \
-    user=system:kube-proxy \
-    kubeconfig=kube-proxy.kubeconfig
+    --cluster=kubernetes-the-hard-way \
+    --user=system:kube-proxy \
+    --kubeconfig=kube-proxy.kubeconfig
 
-  kubectl config use-context default kubeconfig=kube-proxy.kubeconfig
+  kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig
 ~~~
 
 
@@ -203,23 +203,24 @@ LOADBALANCER_ADDRESS=192.168.25.30
 
 ~~~
   kubectl config set-cluster kubernetes-the-hard-way \
-    certificate-authority=ca.crt \
-    embed-certs=true \
-    server=https://127.0.0.1:6443 \
-    kubeconfig=kube-controller-manager.kubeconfig
+    --certificate-authority=ca.crt \
+    --embed-certs=true \
+    --server=https://127.0.0.1:6443 \
+    --kubeconfig=kube-controller-manager.kubeconfig
 
   kubectl config set-credentials system:kube-controller-manager \
-    client-certificate=kube-controller-manager.crt \
-    client-key=kube-controller-manager.key \
-    embed-certs=true \
-    kubeconfig=kube-controller-manager.kubeconfig
+    --client-certificate=kube-controller-manager.crt \
+    --client-key=kube-controller-manager.key \
+    --embed-certs=true \
+    --kubeconfig=kube-controller-manager.kubeconfig
 
   kubectl config set-context default \
-    cluster=kubernetes-the-hard-way \
-    user=system:kube-controller-manager \
-    kubeconfig=kube-controller-manager.kubeconfig
+    --cluster=kubernetes-the-hard-way \
+    --user=system:kube-controller-manager \
+    --kubeconfig=kube-controller-manager.kubeconfig
 
-  kubectl config use-context default kubeconfig=kube-controller-manager.kubeconfig
+  kubectl config use-context default --kubeconfig=kube-controller-manager.kubeconfig
+
 ~~~
 
 - master-1 / kube-scheduler kubeconfig 파일
