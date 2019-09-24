@@ -706,7 +706,7 @@ EOF
 
 - master-1
 ~~~
-kubectl get nodes kubeconfig admin.kubeconfig
+kubectl get nodes --kubeconfig admin.kubeconfig
 ~~~
 ~~~
 cat > openssl-worker-2.cnf <<EOF
@@ -931,7 +931,7 @@ rules:
 EOF
 ~~~
 ~~~
-cat <<EOF | kubectl apply kubeconfig admin.kubeconfig -f -
+cat <<EOF | kubectl apply --kubeconfig admin.kubeconfig -f -
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
 metadata:
