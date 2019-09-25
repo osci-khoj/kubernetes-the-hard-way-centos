@@ -908,7 +908,7 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl versio
 
 - master-1
 ~~~
-cat <<EOF | kubectl apply kubeconfig admin.kubeconfig -f -
+cat <<EOF | kubectl apply --kubeconfig admin.kubeconfig -f -
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
