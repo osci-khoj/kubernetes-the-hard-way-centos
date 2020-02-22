@@ -1,5 +1,5 @@
 
-구축 환경 : 
+구축 환경 : 2020년 최신버전으로 업그레이드 되었음. 
 
        환경 : centos based on VirtualBox
        
